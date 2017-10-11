@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>登陆</title>
+	<script
+	src="http://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="login/magic-input.min.css">
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<style>
+		html,body{
+			height: 100%;
+			width: 100%;
+		}
+		body{
+			background: url(login/home.jpg) no-repeat center center fixed;
+			background-size: 100%;
+		}
+		.login-main{
+			width:100%;
+			height:100%;
+			background-color: rgba(0,0,0,0.5)
+		}
+		.login-body{
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			height: 100%;
+			box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+		}
+		.login-form{
+
+			height: 100%;
+			background-color: rgb(249, 249, 249);
+
+		}
+		.login-top-title>p:first-child{
+			margin-bottom: 0;
+			font-size: 25px;
+			color: #454545;
+		}
+		.login-top-title>p:first-child>span{
+			color: #d21528;
+			font-size: 40px;
+		}
+		.login-top-title>p:not(:first-child){
+
+		}
+		.login-top-title{
+			background: url(login/denglubg.png) no-repeat center center;
+			background-size: 100% 100%;
+			height: 198px;
+			width: 600px;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+		.login-form>p:nth-child(2){
+			margin-top: 35px;
+		}
+		.login-form>p{
+			margin-bottom: 5px;
+			font-weight: normal;
+			color: #68696b;
+			font-family: PingFangSC-Regular;
+			font-size: 15px;
+			padding-left: 129px;
+
+		}
+		.login-form>p:not(:first-child)>span{
+		}
+		.login-form>input{
+			margin-left: 125px;
+			width: 350px;
+			height: 35px;
+			font-size: 16px;
+			border: none;
+			border-bottom: 1px solid #dfdfdf;
+			padding: 0 10px;
+			color: #c3c3c3;
+			outline: none;
+			margin-bottom: 25px;
+			background: transparent;
+		}
+		.login-form>input:focus{
+			color: #333;
+			border-bottom: 1px solid rgb(191, 29, 45);
+		}
+		.login-btn .row{
+			width: 350px;
+			margin: 0 auto;
+		}
+		.login-btn .row div{
+			padding: 0
+		}
+		.login-btn .row .col-md-6:first-child p{
+			padding: 0;
+			margin: 0;
+			color: #68696b;
+		}
+		.mgc:checked:after {
+			top: 4px;
+			left: 3px;
+		}
+		.login-btn .row .col-md-6:first-child p>input{
+			outline: none
+		}
+		.login-btn .row .col-md-6:not(:first-child) p{
+			padding: 0;
+			margin: 0;
+			text-align: right;
+		}
+		.login-btn .row .col-md-6:not(:first-child) p>a{
+			color: #68696b;
+			outline: none;
+			text-decoration: none;
+		}
+		.login-btn button{
+			width: 350px;
+			height: 50px;
+			background-color: rgba(210, 21, 40, 1);
+			border-radius: 32px 32px 32px 32px;
+			color: #fff;
+			font-size: 16px;
+			outline: none;
+			box-shadow: none;
+			border: none;
+			margin-left: 125px;
+			margin-top: 50px;
+		}
+
+		.logo-show{
+			position: absolute;
+			left: 70px;
+		}
+	</style>
+</head>
+<body>
+	<div class="login-main">
+		<div class="logo-show"><embed src="login/logo.svg" type="image/svg+xml" pluginspage="img/"></div>
+		<div class="login-body">
+			<div class="login-form">
+				<div class="login-top-title">
+					<p>登陆<span>正圣ERP系统</span></p>
+					<p>LOGIN TO ZHENGSHENG ERP SYSTEM</p>
+				</div>
+				<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>YOUR LOGIN NAME</p>
+				<input type="text" placeholder="input your login name" id="login-name">
+				<p><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>YOUR LOGIN PASSWORD</p>
+				<input type="password" placeholder="input your login password" id="login-pwd">
+				<div class="login-btn">
+					<div class="row">
+						<div class="col-md-6"><p><input type="checkbox" class="mgc mgc-danger mgc-circle"  id="rember">记住密码</p></div>
+						<div class="col-md-6"><p><a href="">忘记密码</a></p></div>
+					</div>
+					<button id="login-btn">登陆</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <script type='text/javascript' src='js/resize.js'></script> -->
+	<script type='text/javascript' src='js/jquery.cookie.js'></script>
+	<script type='text/javascript' src='js/login.js'></script>
+</body>
+</html>
