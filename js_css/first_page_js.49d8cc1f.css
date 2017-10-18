@@ -48,8 +48,8 @@ html,body{height: 100%;width:100%}
   background-clip: text;
   color: transparent;
   text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
-  -webkit-animation: wave-animation 1s infinite linear , loading-animation 5s infinite linear alternate;
-          animation: wave-animation 1s infinite linear , loading-animation 5s infinite linear alternate;
+  -webkit-animation: wave-animation 1s infinite linear , loading-animation 5s forwards linear alternate;
+          animation: wave-animation 1s infinite linear , loading-animation 5s forwards linear alternate;
   background-size: 200px 100px;
   background-repeat: repeat-x;
   opacity: 1;
@@ -112,8 +112,8 @@ html,body{height: 100%;width:100%}
   background-clip: text;
   color: transparent;
   text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
-  -webkit-animation: wave-animation2 1s infinite linear , loading-animation2 5s infinite linear alternate;
-          animation: wave-animation2 1s infinite linear , loading-animation2 5s infinite linear alternate;
+  -webkit-animation: wave-animation2 1s infinite linear , loading-animation2 5s forwards linear alternate;
+          animation: wave-animation2 1s infinite linear , loading-animation2 5s forwards linear alternate;
   background-size: 200px 100px;
   background-repeat: repeat-x;
   opacity: 1;
